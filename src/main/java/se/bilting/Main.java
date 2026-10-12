@@ -11,17 +11,11 @@ public class Main {
     }
 }
 
-// Uppgift:
-// Beskriv spelet med ett interface GuessGame
-// NumberGuessGame implements GuessGame
-// hitta på nåt nytt gissningsspel (implements GuessGame)
-// se hur lätt det är att byta till annat spel.
+/*
+Skriv ett test för Hangman, med mockning av Scoring så denm inte skriver på nån fil.
 
-// Extrauppgift
-// 1. låt spelaren välja spel vid start.
-// 2. kunna spela flera ggr.
-// 3. extra metod som beskriver spelets mål och regler
-
+Lägg till tester för de andra spelen med eventuell mockning
+ */
 
 
 
