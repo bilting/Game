@@ -7,13 +7,16 @@ import java.util.Set;
 
 public class Hangman implements GuessGame{
 
+    private Scoring scoring;
+
     private Set<Character> guesses;
     private int nGuess;
     private String[] words = {"kardemumma", "syltlök", "kanelbulle", "wasabi"};
     private String secret;
     private boolean finished = false;
 
-    public Hangman() {
+    public Hangman(Scoring scoring) {
+        this.scoring = scoring;
         Random rand = new Random();
         guesses = new HashSet<>();
         secret = words[rand.nextInt(words.length)];
@@ -24,11 +27,12 @@ public class Hangman implements GuessGame{
     @Override
     public String makeGuess(String guess) {
 
+        String info = "";
         char cGuess = guess.charAt(0);
         if (guesses.contains(cGuess)) {
             return "Already guessed that.";
         }
-
+        nGuess++;
         guesses.add(cGuess);
         String answer = "";
         finished = true;
@@ -41,7 +45,12 @@ public class Hangman implements GuessGame{
                 answer += "_";
             }
         }
-        return answer;
+        if (finished) {
+            scoring.saveResult(nGuess);
+            info = scoring.getStats();
+        }
+
+        return answer + "\n" + info;
     }
 
     @Override

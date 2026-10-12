@@ -33,5 +33,13 @@ public class NumberGuessGame implements GuessGame {
     public String getInfo() {
         return "Gissa ett tal 1-100, du får reda på > < = !";
     }
+
+    public int getSecret() {
+        return secret;
+    }
+
+    public void setSecret(int secret) {
+        this.secret = secret;
+    }
 }
 

@@ -3,7 +3,8 @@ package se.bilting;
 public class Main {
     static void main() {
 
-        GuessGame game = new Hangman();
+        Scoring s = new HangmanScoring();
+        GuessGame game = new Hangman(s);
         GameController controller = new GameController(game);
 
         controller.run();
