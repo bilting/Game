@@ -11,11 +11,5 @@ public class Main {
     }
 }
 
-/*
-Skriv ett test för Hangman, med mockning av Scoring så denm inte skriver på nån fil.
-
-Lägg till tester för de andra spelen med eventuell mockning
- */
-
 
 

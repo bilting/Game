@@ -24,6 +24,11 @@ public class Hangman implements GuessGame{
 
     }
 
+    /* added for tests only */
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
+
     @Override
     public String makeGuess(String guess) {
 
@@ -63,4 +68,6 @@ public class Hangman implements GuessGame{
         return "Hangman, guess one char at a time!\n"
                 + "_".repeat(secret.length());
     }
+
+
 }
